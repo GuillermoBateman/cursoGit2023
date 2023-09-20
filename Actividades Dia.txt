@@ -1,0 +1,204 @@
+----------------------------------------------
+Desarrollos
+----------------------------------------------
+Pendientes
+-----
+- Validacion de monto del carrito -- Osiris
+- Validacion de tiempo (72 hrs) de eliminacion de archivos en "Mis descargas" Backoffice
+- Descarga masiva de rendiciones -- backoffice
+- Cuadraturas -- backoffice
+- Validar la actualizacion del Id Corto en LLC creadas -- Pruebas de integracion
+- Definicion: 
+  No se manda correo con archivo vacío.
+  Se generará un nuevo formato de correo y se enviará este correo sin archivo adjunto, con un mensaje tipo ""la empresa no tiene rendiciones para el periodo""."
+
+Completados
+-----
+Desarrollo
+- validacion de fecha mov reintento abono - jose -- OK se conversa con David no es necesario realizar nada
+- creacion de registro cuando no existe mov - reintento abono - jose -- el reintento de abono se debe realizar el mismo dia del abono
+- validacion de cambio de codigos de error -- envio rendiciones mail -- se valida en nueva fucionalidad 943002
+- validacion mensaje reg pagador - Diego -- revisado en version 3.4 del ORQ
+- validacion del monto q es enviado en notify biocatch -- Gabriel 
+- mensaje "on" por "no" en  abono comision - se debe "actualizar" yml de la 1.5 -- jose 31-08 OK
+
+
+----------------------------------------------
+Actividad Dia
+----------------------------------------------
+- revisiones csx - temas pendientes con Rodrigo
+- bcipass - goran
+- rol BDP - Jose
+
+- Pruebas revision trx -- OK
+- Pruebas de abonos -- OK
+
+----------------------------------------------
+Tareas Diarias
+----------------------------------------------
+- Resumen Proceso de abono/rendición 13-09 
+  Resultado: OK
+  
+  Total de trx Abono: 189
+  Total de trx robot/jmeter: 188
+  
+  Proceso de las 14 hrs 
+  Trx procesadas Robot v2.3
+  Total: 0
+  Pagadas: 0
+  Pendiente: 0
+  Abortada: 0
+  Rechazada: 0
+  Observaciones: En revision
+
+  Trx procesadas JMeter v2.3
+  Total: 80
+  Pagadas: 80
+  Pendiente:0
+  Abortada: 0
+  Rechazada: 0
+  Observaciones: 
+  
+  Abono Tandem:
+  Recaudador: 90635000-9
+  LLC: RUT.906350009.PAYMENTSBUTTONSCOMMERCES.111111.123456.001
+  cuenta: 10067990
+  Monto abono: 840.930
+  Saldo Antes: 158.412.840.604
+  Otros abonos: 
+  Saldos Despues: 158.413.681.534
+  Hora corte fecha contable: 13-09-2023  14:00:01
+
+  Obs Otros abonos: 
+
+--------------------------------- 
+Revision de pago de  trx
+Version ORQ 2.3
+
+Fecha Proceso:     13-09
+Hora Proceso:      09:00
+Nro trx generadas: 20
+Pagadas: 18
+Pendientes: 2
+Estado:  OK
+
+Observaciones: En revision 
+
+
+----------------------------------------------
+Ejecucion pruebas de certificacion
+----------------------------------------------
+Estimados 
+
+Les comento que ha finalizado correctamente la siguiente Certificacion:
+
+  [QA] Certificación Rendiciones para 360 connect
+  
+  Orden de cambio certificada:
+	OC 213527 - [CI-CD] ms-documentosempresasolucionpago-neg Release re-v1-0-0
+	OC 213499 - [CI-CD] ms-persistenciasolucionpago-neg Release re-v1-4-0
+	OC 212233 - [CI-CD] ms-almacenamientosolucionpago-neg Release re-v1-0-0 
+  
+  Pendientes: 
+  Regularizacion Octane ciclo 1
+  Envio correo con finalizacion OK de certificacion
+  
+   
+----------------------------------------------
+Reporte de Incidentes de ambiente
+----------------------------------------------
+Fecha Incidente: 10/07/2023
+Fecha Resolución:10/07/2023
+Detalle Incidente: Problemas con el ms de segundasclaves, se detecta el error al momento de generar el pago de las trx de csx en los procesos de las 13 y 14 horas.
+Duración Incidente: 60 minutos
+SDM Asociado: no
+Reportado en : slack Paypatrol
+Método de Resolución (Cómo se arregló): Se soluciono sin mediar intervencion.
+
+
+----------------------------------------------
+Revisiones CSX
+----------------------------------------------
+Estimados
+
+buenos dias
+
+Les comento que se  validó  OK lo mencionado en el correo anterior,  no teniendo observaciones que reportar.
+
+Saludos
+Guillermo Bateman
+
+----------------------------------------------
+digitacion
+----------------------------------------------
+
+====================================================
+Jira comentarios
+====================================================
+No se ha iniciado actividad
+Se da inicio a actividad
+En espera de instalación en Ambiente QA
+Actividad en curso
+Actividad finaliza OK
+Actividad finaliza con observaciones, las cuales se validaran en un nuevo ciclo de certificacion.
+
+Certificación de Cargo y Abono en línea finaliza OK
+
+====================================================
+Texto Correo 
+====================================================
+Horario extendido OC 183346 - [NSP] Paypatrol - Botón de Pago - Registrar Pagador
+====================================================
+
+Estimados
+
+Buenas tardes
+
+Se da comienzo al horario extendido para la OC mencionada en el asunto a partir de las 18:30hrs.
+
+Saludos,
+
+
+====================================================
+Estimados
+
+Buenas tardes
+
+Se da por finalizado el horario extendido para la OC mencionada en el asunto, el horario de termino corresponde a las 20:30hrs.
+
+Las tareas que fueron realizadas corresponde a:
+
+- Pruebas de no Impacto, posterior a paso certificacion
+
+====================================================
+Reporte asociado a CSX
+====================================================
+sergio.moyano@componenteserviex.com
+nicolas.jorquera@componenteserviex.com
+ricardo.godoy@componenteserviex.com
+daniel.gonzalez@componenteserviex.com
+eduardo.castillo@componenteserviex.com
+david.colomac@bci.cl
+
+Reporte asociado a "Endpoint descarga Rendicion Archivo Vacio"
+
+Estimados
+Sergio, Nicolas
+
+buenos dias,
+
+favor de su ayuda para revision de problemas encontrados en Endpoint descarga Rendicion Archivo Vacio:
+
+- Registro tipo 1, largo del registro es menor(228) al largo de una rendición normal con Data (229)
+- Validacion del request:
+  Puede ser ingresado cualquier valor en los tag “identificationNumber” y “agreementKey”.
+  Puede ser ingresado cualquier valor en los tags “cycle” y “date”.
+
+de antemano muchas gracias y quedo atento a sus comentarios
+Saludos,
+
+
+Encuesta psicosocial
+-----
+El cuestionario CUV 135898, folio 400120230134123 y con fecha de inicio 2023-08-16, ha sido exitosamente respondido por usted.
+¡Gracias por responder!
